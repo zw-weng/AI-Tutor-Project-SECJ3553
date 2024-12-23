@@ -1,100 +1,110 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* Header */}
+      <header className="flex justify-between items-center p-6 bg-gray-800 text-white">
+        <div className="text-xl font-bold">AI Tutor LMS</div>
+        <nav>
+          <ul className="flex space-x-6">
+            <li><a href="#" className="hover:text-gray-400">Home</a></li>
+            <li><a href="#features" className="hover:text-gray-400">Features</a></li>
+            <li><a href="#pricing" className="hover:text-gray-400">Pricing</a></li>
+            <li><a href="#about" className="hover:text-gray-400">About</a></li>
+            <li><a href="#login" className="hover:text-gray-400">Login</a></li>
+          </ul>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="text-center bg-blue-500 text-white py-20">
+        <h1 className="text-4xl font-bold">Transform Learning with AI</h1>
+        <p className="mt-4 text-lg">Personalized, Adaptive, and AI-Powered LMS</p>
+        <div className="mt-6">
+          <button className="px-6 py-2 bg-green-500 rounded hover:bg-green-600">Get Started Free</button>
+          <button className="ml-4 px-6 py-2 bg-gray-800 rounded hover:bg-gray-900">Request a Demo</button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-16 bg-gray-100">
+        <h2 className="text-center text-3xl font-bold mb-8">Features</h2>
+        <div className="flex justify-around">
+          <div className="text-center">
+            <img src="/icons/ai-tutor.svg" alt="AI Tutor" className="w-16 mx-auto" />
+            <h3 className="mt-4 font-semibold">AI-Powered Tutors</h3>
+            <p className="mt-2 text-gray-600">Get personalized tutoring with AI.</p>
+          </div>
+          <div className="text-center">
+            <img src="/icons/personalized.svg" alt="Personalized Learning" className="w-16 mx-auto" />
+            <h3 className="mt-4 font-semibold">Personalized Learning Paths</h3>
+            <p className="mt-2 text-gray-600">Adaptive courses tailored to learners.</p>
+          </div>
+          <div className="text-center">
+            <img src="/icons/analytics.svg" alt="Analytics" className="w-16 mx-auto" />
+            <h3 className="mt-4 font-semibold">Real-Time Analytics</h3>
+            <p className="mt-2 text-gray-600">Track progress and improve outcomes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Demo Section */}
+      <section id="demo" className="py-16 bg-white">
+        <h2 className="text-center text-3xl font-bold mb-8">Interactive Demo</h2>
+        <div className="text-center">
+          <textarea
+            placeholder="Ask our AI tutor anything..."
+            className="w-3/4 p-4 border rounded"
+          ></textarea>
+          <button className="ml-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            Submit
+          </button>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-16 bg-gray-100">
+        <h2 className="text-center text-3xl font-bold mb-8">What Users Say</h2>
+        <div className="flex justify-around">
+          <blockquote className="w-1/3 text-center italic">
+            "This LMS improved our outcomes by 30%!" - User 1
+          </blockquote>
+          <blockquote className="w-1/3 text-center italic">
+            "The AI tutor is a game-changer!" - User 2
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 bg-white">
+        <h2 className="text-center text-3xl font-bold mb-8">Pricing</h2>
+        <div className="flex justify-around">
+          <div className="text-center border p-6 rounded">
+            <h3 className="font-bold">Basic Plan</h3>
+            <p className="mt-4">$10/month</p>
+            <button className="mt-6 px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+              Choose Plan
+            </button>
+          </div>
+          <div className="text-center border p-6 rounded">
+            <h3 className="font-bold">Pro Plan</h3>
+            <p className="mt-4">$20/month</p>
+            <button className="mt-6 px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+              Choose Plan
+            </button>
+          </div>
+          <div className="text-center border p-6 rounded">
+            <h3 className="font-bold">Enterprise</h3>
+            <p className="mt-4">Custom Pricing</p>
+            <button className="mt-6 px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 bg-gray-800 text-white text-center">
+        <p>&copy; 2024 AI Tutor LMS. All rights reserved.</p>
       </footer>
     </div>
   );
