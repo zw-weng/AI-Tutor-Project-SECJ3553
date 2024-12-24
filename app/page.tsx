@@ -8,7 +8,6 @@ export default function Home() {
           <ul className="flex space-x-6">
             <li><a href="#" className="hover:text-gray-400">Home</a></li>
             <li><a href="#features" className="hover:text-gray-400">Features</a></li>
-            <li><a href="#about" className="hover:text-gray-400">About</a></li>
           </ul>
         </nav>
       </header>
