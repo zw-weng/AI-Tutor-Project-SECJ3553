@@ -80,44 +80,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Interactive Demo Section */}
-      <section id="demo" className="py-16 bg-white">
-        <div className="text-center">
-          <textarea
-            placeholder="Ask our AI tutor anything..."
-            className="w-3/4 p-4 border rounded"
-          ></textarea>
-          <button className="ml-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-            Submit
-          </button>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="py-6 bg-gray-800 text-white text-center">
         <p>&copy; 2024 AI Tutor LMS. All rights reserved.</p>
       </footer>
 
-      {/* Chatbox */}
-      <div className="fixed right-4 bottom-4 w-80 h-96 bg-white shadow-lg rounded-lg flex flex-col">
-        <div className="bg-blue-500 text-white px-4 py-2 rounded-t-lg text-lg font-semibold">
-          Chat with AI Tutor
-        </div>
-        <div className="flex-1 overflow-y-auto p-4 space-y-2">
-          {/* Chat messages */}
-          <div className="text-gray-700">Hi! How can I assist you today?</div>
-        </div>
-        <div className="p-2 flex items-center border-t">
-          <input
-            type="text"
-            placeholder="Type your message..."
-            className="flex-1 border p-2 rounded"
-          />
-          <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-            Send
-          </button>
-        </div>
-      </div>
+      
     </div>
   );
 }
