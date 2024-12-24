@@ -59,18 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 bg-gray-100">
-        <h2 className="text-center text-3xl font-bold mb-8">What Users Say</h2>
-        <div className="flex justify-around">
-          <blockquote className="w-1/3 text-center italic">
-            "This LMS improved our outcomes by 30%!" - User 1
-          </blockquote>
-          <blockquote className="w-1/3 text-center italic">
-            "The AI tutor is a game-changer!" - User 2
-          </blockquote>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="py-6 bg-gray-800 text-white text-center">
