@@ -1,26 +1,14 @@
 "use client"; // Mark this component as a client component
 
-import { useState } from "react";
 import { useRouter } from "next/navigation"; // Import from next/navigation
+import FileUpload from "./components/FileUpload"; // Import the FileUpload component
 
 export default function Home() {
-  const [fileError, setFileError] = useState("");
   const router = useRouter(); // Use the router from next/navigation
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type !== "application/pdf") {
-      setFileError("Only PDF files are allowed.");
-    } else {
-      setFileError("");
-    }
-  };
-
-  const handleUploadClick = () => {
-    if (!fileError) {
-      // Redirect to the "Function" page
-      router.push("/function");
-    }
+  const handleUploadSuccess = () => {
+    // Redirect to the "Function" page upon successful file upload
+    router.push("/function");
   };
 
   return (
@@ -39,22 +27,10 @@ export default function Home() {
       {/* Upload Resources Section */}
       <section id="upload" className="py-16 bg-gray-100">
         <h2 className="text-center text-3xl font-bold mb-8">Upload Resources</h2>
-        <div className="text-center">
-          <input
-            type="file"
-            accept=".pdf"
-            className="border p-2 rounded"
-            onChange={handleFileUpload}
-          />
-          <button
-            className="ml-4 px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-            onClick={handleUploadClick}
-          >
-            Upload
-          </button>
-          {fileError && (
-            <p className="text-red-500 mt-2">{fileError}</p>
-          )}
+        <div className="flex justify-center">
+          <div className="w-full max-w-sm">
+            <FileUpload />
+          </div>
         </div>
       </section>
 
@@ -80,14 +56,10 @@ export default function Home() {
         </div>
       </section>
 
-      
-
       {/* Footer */}
       <footer className="py-6 bg-gray-800 text-white text-center">
         <p>&copy; 2024 AI Tutor LMS. All rights reserved.</p>
       </footer>
-
-      
     </div>
   );
 }
