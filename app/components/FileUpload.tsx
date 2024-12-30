@@ -1,26 +1,28 @@
-"use client"; // Mark this component as a client component
-import React, { useState } from "react";
-import { Inbox } from "lucide-react";
+"use client";
+import React from "react";
 import { UploadDropzone } from "@/lib/uploadthing";
 import type { OurFileRouter } from "@/app/api/uploadthing/core";
 
-const FileUpload: React.FC = () => {
-  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+interface FileUploadProps {
+  onUploadSuccess: (fileUrl: string) => void;
+}
 
+const FileUpload: React.FC<FileUploadProps> = ({ onUploadSuccess }) => {
   return (
     <div className="mt-6 border-dashed border-2 rounded-xl bg-gray-50 py-8 flex justify-center items-center flex-col hover:shadow-md transition-shadow duration-300 ease-in-out">
-        <UploadDropzone<OurFileRouter>
-          endpoint="pdfUploader" // Match the routeSlug for your PDF uploads
-          onClientUploadComplete={(res) => {
-            setPdfUrl(res[0]?.fileUrl || null); // Set the uploaded PDF URL
-            console.log("Uploaded files:", res);
-            alert("Upload Completed");
-          }}
-          onUploadError={(error) => {
-            console.error("Upload error:", error);
-            alert(`ERROR! ${error.message}`);
-          }}
-        />
+      <UploadDropzone<OurFileRouter>
+        endpoint="pdfUploader"
+        onClientUploadComplete={(res) => {
+          const fileKey = res[0]?.fileKey || "";
+          const fileUrl = `https://utfs.io/f/${fileKey}`;
+          console.log("Uploaded file URL:", fileUrl);
+          onUploadSuccess(fileUrl);
+        }}
+        onUploadError={(error) => {
+          console.error("Upload error:", error);
+          alert(`ERROR! ${error.message}`);
+        }}
+      />
     </div>
   );
 };
